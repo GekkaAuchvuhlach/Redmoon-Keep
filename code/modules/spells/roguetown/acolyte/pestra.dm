@@ -151,7 +151,7 @@
 	miracle = TRUE
 	devotion_cost = 30
 	/// Amount of PQ gained for curing zombos
-	var/unzombification_pq = PQ_GAIN_UNZOMBIFY
+	// var/unzombification_pq = PQ_GAIN_UNZOMBIFY
 
 /obj/effect/proc_holder/spell/invoked/cure_rot/cast(list/targets, mob/living/user)
 	if(isliving(targets[1]))
@@ -176,8 +176,8 @@
 			target.emote("breathgasp")
 			target.Jitter(100)
 
-			if(unzombification_pq && !HAS_TRAIT(target, TRAIT_IWASUNZOMBIFIED) && user?.ckey)
-				adjust_playerquality(unzombification_pq, user.ckey)
+			if( /* unzombification_pq */ && !HAS_TRAIT(target, TRAIT_IWASUNZOMBIFIED) && user?.ckey)
+				// adjust_playerquality(unzombification_pq, user.ckey)
 				ADD_TRAIT(target, TRAIT_IWASUNZOMBIFIED, "[type]")
 
 		var/datum/component/rot/rot = target.GetComponent(/datum/component/rot)
